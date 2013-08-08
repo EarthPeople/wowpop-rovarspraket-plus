@@ -12,8 +12,10 @@ http://sv.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket
 
 */
 
+// Add our own namespace so our plugin does not collide with any of the many other rövarspråket plugins
 namespace ep\rovarspraket;
 
+// Class that handles the translation from regular texts to rövarspråket variants
 class rovarsprak {
 
 	private $vokaler;
@@ -23,23 +25,23 @@ class rovarsprak {
 
 		$this->vokaler = preg_split('/(?<!^)(?!$)/u', "aeiouyåäö");
 		$this->konsonanter = array_diff(range("a", "z"), $this->vokaler);
-		
+
 		add_filter("the_content", array($this, "filter_the_content"));
 		add_filter("the_title", array($this, "filter_the_title"));
 		add_filter("gettext", array($this, "filter_gettext"), 10, 3);
-
+		
 	}
 
 	// return apply_filters( 'gettext', $translations->translate( $text ), $text, $domain );
-	function filter_gettext($text_translated, $text_untranslated, $domain) {
+	public function filter_gettext($text_translated, $text_untranslated, $domain) {
 		return $this->rovarize_text($text_translated);
 	}
 
-	function filter_the_content($content) {
+	public function filter_the_content($content) {
 		return $this->rovarize_text($content);
 	}
 
-	function filter_the_title($content) {
+	public function filter_the_title($content) {
 		return $this->rovarize_text($content);
 	}
 	
@@ -47,7 +49,7 @@ class rovarsprak {
 	/**
 	 * Do the actual rövarerlizing
 	 */
-	function rovarize_text($text) {
+	public function rovarize_text($text) {
 		
 		foreach ($this->konsonanter as $one_char) {
 
