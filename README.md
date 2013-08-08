@@ -7,6 +7,8 @@ Detta är en plugin till WordPress som översätter texten på din hemsida till 
 
 ## Skärmdump
 
+Såhär kan en sida se ut som blivit översatt till rövarspråk.
+
 ![Skärmdump som visar en sida översatt till rövarspråket](rovarspraket-wordpress-screenshot.png)
 
 ## Versionshistorik
