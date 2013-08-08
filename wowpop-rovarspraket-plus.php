@@ -50,7 +50,12 @@ class rovarsprak {
 	function rovarize_text($text) {
 		
 		foreach ($this->konsonanter as $one_char) {
+
 			$text = str_replace($one_char, "{$one_char}o{$one_char}", $text);
+			
+			$uppercase_char = strtoupper($one_char);
+			$text = str_replace($uppercase_char, "{$uppercase_char}o{$one_char}", $text);
+
 		}
 		
 		return $text;
