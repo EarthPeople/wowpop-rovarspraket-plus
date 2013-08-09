@@ -15,7 +15,9 @@ http://sv.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket
 // Add our own namespace so our plugin does not collide with any of the many other rövarspråket plugins
 namespace ep\rorovovarorsospoprorakoketot;
 
-// Class that handles the translation from regular texts to rövarspråket variants
+/**
+ * Class that handles the translation from regular texts to rövarspråket variants
+ */
 class rorovovarorsospoprorakoketot {
 
 	private $vovokokaloleror;
