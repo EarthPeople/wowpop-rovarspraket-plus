@@ -66,4 +66,6 @@ class rorovovarorsospoprorakoketot {
 
 }
 
-$GLOBALS["ep_rorovovarorsospoprorakoketot"] = new rorovovarorsospoprorakoketot();
+if (!is_admin()) {
+	$GLOBALS["ep_rorovovarorsospoprorakoketot"] = new rorovovarorsospoprorakoketot();
+}
