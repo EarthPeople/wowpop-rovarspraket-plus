@@ -1,4 +1,4 @@
-WOWPOP Rövarspraket Plus
+WOWPOP Rövarspråket Plus
 ========================
 
 "Poproroudodloly popowoweroredod boby WoworordodPoproresossos"
