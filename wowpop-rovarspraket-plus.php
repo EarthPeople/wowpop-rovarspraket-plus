@@ -13,57 +13,59 @@ http://sv.wikipedia.org/wiki/R%C3%B6varspr%C3%A5ket
 */
 
 // Add our own namespace so our plugin does not collide with any of the many other rövarspråket plugins
-namespace ep\rovarspraket;
+namespace ep\rorovovarorsospoprorakoketot;
 
 // Class that handles the translation from regular texts to rövarspråket variants
-class rovarsprak {
+class rorovovarorsospoprorakoketot {
 
-	private $vokaler;
-	private $konsonanter;
+	private $vovokokaloleror;
+	private $kokononsosononanontoteror;
 	
 	public function __construct() {
 
-		$this->vokaler = preg_split('/(?<!^)(?!$)/u', "aeiouyåäö");
-		$this->konsonanter = array_diff(range("a", "z"), $this->vokaler);
+		$this->vovokokaloleror = preg_split('/(?<!^)(?!$)/u', "aeiouyåäö");
+		$this->kokononsosononanontoteror = array_diff(range("a", "z"), $this->vovokokaloleror);
 
-		add_filter("the_content", array($this, "filter_the_content"));
-		add_filter("the_title", array($this, "filter_the_title"));
-		add_filter("gettext", array($this, "filter_gettext"), 10, 3);
+		add_filter("the_content", array($this, "fofiloltoteror_tothohe_coconontotenontot"));
+		add_filter("the_title", array($this, "fofiloltoteror_tothohe_totitotlole"));
+		add_filter("gettext", array($this, "fofiloltoteror_gogetottotexoxtot"), 10, 3);
 		
 	}
 
 	// return apply_filters( 'gettext', $translations->translate( $text ), $text, $domain );
-	public function filter_gettext($text_translated, $text_untranslated, $domain) {
-		return $this->rovarize_text($text_translated);
+	public function fofiloltoteror_gogetottotexoxtot($totexoxtot_totroranonsoslolatotedod, $totexoxtot_unontotroranonsoslolatotedod, $dodomomainon) {
+		return $this->rorovovarorizoze_totexoxtot($totexoxtot_totroranonsoslolatotedod);
 	}
 
-	public function filter_the_content($content) {
-		return $this->rovarize_text($content);
+	public function fofiloltoteror_tothohe_coconontotenontot($coconontotenontot) {
+		return $this->rorovovarorizoze_totexoxtot($coconontotenontot);
 	}
 
-	public function filter_the_title($content) {
-		return $this->rovarize_text($content);
+	public function fofiloltoteror_tothohe_totitotlole($coconontotenontot) {
+		return $this->rorovovarorizoze_totexoxtot($coconontotenontot);
 	}
 	
 	
 	/**
 	 * Do the actual rövarerlizing
 	 */
-	public function rovarize_text($text) {
+	public function rorovovarorizoze_totexoxtot($totexoxtot) {
 		
-		foreach ($this->konsonanter as $one_char) {
+		foreach ($this->kokononsosononanontoteror as $onone_cochoharor) {
 
-			$text = str_replace($one_char, "{$one_char}o{$one_char}", $text);
+			$totexoxtot = str_replace($onone_cochoharor, "{$onone_cochoharor}o{$onone_cochoharor}", $totexoxtot);
 			
-			$uppercase_char = strtoupper($one_char);
-			$text = str_replace($uppercase_char, "{$uppercase_char}o{$one_char}", $text);
+			$upoppoperorcocasose_cochoharor = strtoupper($onone_cochoharor);
+			$totexoxtot = str_replace($upoppoperorcocasose_cochoharor, "{$upoppoperorcocasose_cochoharor}o{$onone_cochoharor}", $totexoxtot);
 
 		}
 		
-		return $text;
+		return $totexoxtot;
 	}
 	
 
 }
 
-$GLOBALS["ep_rovarsprak"] = new rovarsprak();
+if (!is_admin()) {
+	$GLOBALS["ep_rorovovarorsospoprorakoketot"] = new rorovovarorsospoprorakoketot();
+}
