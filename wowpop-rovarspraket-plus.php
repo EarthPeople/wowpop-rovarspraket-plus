@@ -3,7 +3,7 @@
 Plugin Name: WOWPOP Rövarspråket Plus
 Plugin URI: http://earthpeople.se/
 Description: Rövarspråket. För WordPress.
-Version: 1.0
+Version: 1.1
 Author: Earth People
 Author URI: http://earthpeople.se
 License: GPL2
@@ -32,7 +32,6 @@ class rorovovarorsospoprorakoketot {
 		
 	}
 
-	// return apply_filters( 'gettext', $translations->translate( $text ), $text, $domain );
 	public function fofiloltoteror_gogetottotexoxtot($totexoxtot_totroranonsoslolatotedod, $totexoxtot_unontotroranonsoslolatotedod, $dodomomainon) {
 		return $this->rorovovarorizoze_totexoxtot($totexoxtot_totroranonsoslolatotedod);
 	}

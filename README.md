@@ -16,3 +16,6 @@ Såhär kan en sida se ut som blivit översatt till rövarspråk.
 Version 1
 - Den funkar!
 
+Version 1.1
+- Code cocloleanonupop (props byBrick)
+- Only run on front end, not on admin pages (props byBrick)
